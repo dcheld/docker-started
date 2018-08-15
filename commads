@@ -14,3 +14,19 @@ docker-machine ssh vm1 "docker swarm init --advertise-addr 192.168.15.24"
 
 docker-machine ssh vm "docker swarm join --token SWMTKN-1-2za35e2v0hubx7jtdam7m51mqlcdqgnybj599kf33lvc74p6vi-cnthpfx24aeh46p84zwwu7hif 192.168.15.24:2377"
 
+---Deploying
+
+--Configura para enviar todos os comandos do meu shell para a maquina vm1
+docker-machine env vm1
+&"C:\Program Files\Docker\Docker\Resources\bin\docker-machine.exe" env vm1 | Invoke-Expression
+docker-machine active // Verificando qual maquina vc está ativo
+
+docker stack deploy -c docker-compose.yml getstartedlab
+
+-- Depois é só pegar a url de uma das maquinas e abrir no browser
+docker-machine url vm1
+curl 192.168.15.24:4000
+
+--removendo o docker-machine env
+& "C:\Program Files\Docker\Docker\Resources\bin\docker-machine.exe" env -u | Invoke-Expression
+
