@@ -1,0 +1,16 @@
+docker swarm init
+
+Configurar nova "virtual network switch" em Hyper-v -> Virtual switch manager
+    Configurada como switch externa
+
+-- Criando 2 maquinas virtuais no hyperv
+docker-machine create -d hyperv vm1
+docker-machine create -d hyperv vm2
+
+Verificando se a maquinas estão funcionando
+docker-machine ls
+
+docker-machine ssh vm1 "docker swarm init --advertise-addr 192.168.15.24"
+
+docker-machine ssh vm "docker swarm join --token SWMTKN-1-2za35e2v0hubx7jtdam7m51mqlcdqgnybj599kf33lvc74p6vi-cnthpfx24aeh46p84zwwu7hif 192.168.15.24:2377"
+

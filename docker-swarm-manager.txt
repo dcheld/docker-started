@@ -1,0 +1,10 @@
+ docker-machine ssh vm1 "docker swarm join-token worker"
+To add a worker to this swarm, run the following command:
+
+    docker swarm join --token SWMTKN-1-2za35e2v0hubx7jtdam7m51mqlcdqgnybj599kf33lvc74p6vi-cnthpfx24aeh46p84zwwu7hif 192.168.15.24:2377
+
+C:\Users\dchel
+λ  docker-machine ssh vm1 "docker swarm join-token manager"
+To add a manager to this swarm, run the following command:
+
+    docker swarm join --token SWMTKN-1-2za35e2v0hubx7jtdam7m51mqlcdqgnybj599kf33lvc74p6vi-14rybk1j1yuqu737ve63vk42b 192.168.15.24:2377
